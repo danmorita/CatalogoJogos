@@ -25,16 +25,19 @@ private static final long serialVersionUID = 1L;
 	
 	private String name;
 	
+	
+	
+	
 //	@OneToMany(mappedBy = "game")
 	@ManyToMany(fetch = FetchType.EAGER,
             cascade = {
-                CascadeType.PERSIST,
-                CascadeType.MERGE
+//                CascadeType.PERSIST,
+                CascadeType.DETACH
             })
-    @JoinTable(name = "game_catalogos",
+    @JoinTable(name = "game_generos",
             joinColumns = { @JoinColumn(name = "game_id") },
             inverseJoinColumns = { @JoinColumn(name = "id") })
-	private Set<Catalogo> catalogos;
+	private Set<Genero> generos;
 	
 	
 	
@@ -60,14 +63,14 @@ private static final long serialVersionUID = 1L;
 
 
 
-	public Set<Catalogo> getCatalogos() {
-		return catalogos;
+	public Set<Genero> getGeneros() {
+		return generos;
 	}
 
 
 
-	public void setCatalogos(Set<Catalogo> catalogos) {
-		this.catalogos = catalogos;
+	public void setGeneros(Set<Genero> generos) {
+		this.generos = generos;
 	}
 
 

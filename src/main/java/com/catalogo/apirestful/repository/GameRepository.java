@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.catalogo.apirestful.models.Game;
 
-public interface GameRespository extends JpaRepository<Game, Long> {
+public interface GameRepository extends JpaRepository<Game, Long> {
 	Game findById(long id);
 	
 //	List<Game>

@@ -17,8 +17,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CATALOGOS")
-public class Catalogo implements Serializable{
+@Table(name="GENEROS")
+public class Genero implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -29,7 +29,7 @@ public class Catalogo implements Serializable{
 	private String name;
 	
 //	@OneToMany(mappedBy = "catalogo")
-//	private Set<GameCatalogos> games;
+//	private Set<GameGeneros> games;
 //	 @ManyToMany(fetch = FetchType.LAZY,
 //	            cascade = {
 //	                CascadeType.PERSIST,
@@ -40,12 +40,12 @@ public class Catalogo implements Serializable{
 
 	
 	
-	public Catalogo(String name) {
+	public Genero(String name) {
 		super();
 		this.name = name;
 	}
 	
-	public Catalogo() {
+	public Genero() {
 	}
 
 	public long getId() {
