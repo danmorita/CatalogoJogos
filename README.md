@@ -10,7 +10,7 @@ foi desenvolvido com framework spring boot 2
 	[] GET/api/games/{id} - Busca por ID
 	[] POST/api/games/
 	
-		```JSON
+		```json
 			{
     			"name": "jogo3",
     			"generos":[
