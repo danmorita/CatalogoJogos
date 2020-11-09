@@ -40,6 +40,7 @@ foi desenvolvido com framework spring boot 2
 
 			}
 		```
+	- DELETE/api/games/{id}
 
 ## Pré-requisitos
 - JAVA 8 ou >
