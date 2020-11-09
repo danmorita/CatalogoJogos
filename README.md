@@ -1,41 +1,48 @@
-# CatalogoJogos
+# Catalogo de Jogos
 
-## Criação das tabelas do banco de dados
+## Descrição
+Api restful para catalogar jogos CRUD
+foi desenvolvido com framework spring boot 2
 
-```SQL
-CREATE TABLE GAMES(
-	ID SERIAL PRIMARY KEY,
-	NAME VARCHAR(255) NOT NULL
-)
+## Endpoint
+[] Games
+	[] GET/api/games - Lista de jogos
+	[] GET/api/games/{id} - Busca por ID
+	[] POST/api/games/
+	
+		```JSON
+			{
+    			"name": "jogo3",
+    			"generos":[
+     				{
+      					"id": 2
+     				},
+     				{
+     					 "id": 3
+     				}
+     			]
 
-CREATE TABLE GENEROS(
-	ID SERIAL PRIMARY KEY,
-	NAME VARCHAR(255) NOT NULL
-)
+			}
+		```
+		
+	[] PUT/api/games/{id}
+		```JSON
+			{
+    			"name": "jogo3",
+    			"generos":[
+     				{
+      					"id": 2
+     				},
+     				{
+     					 "id": 3
+     				}
+     			]
 
-CREATE TABLE GAME_GENEROS(
-	ID SERIAL PRIMARY KEY,
-	GAME_ID SERIAL NOT NULL,
-	GENERO_ID SERIAL NOT NULL,
-	FOREIGN KEY (GAME_ID) REFERENCES GAMES(ID),
-	FOREIGN KEY (GENERO_ID) REFERENCES GENEROS(ID)
-)
-```
+			}
+		```
+
+## Pré-requisitos
+- JAVA 8 ou >
+- Postgres
 
 
-##insert para testes
-```
-insert into games (name)values ('game');
-insert into generos (name)values ('genero1');
-insert into game_generos (game_id,genero_id)values (1,1);
-insert into generos (name)values ('genero2');
-insert into game_generos (game_id,genero_id)values (1,2);
-```
-
-
-##insert de jogos em formato json
-```
-{
-    "name": "jogo3"
-}
-```

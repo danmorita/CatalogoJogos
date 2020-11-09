@@ -17,7 +17,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="GENEROS")
+@Table(name="Generos")
 public class Genero implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -29,7 +29,7 @@ public class Genero implements Serializable{
 	private String name;
 	
 //	@OneToMany(mappedBy = "catalogo")
-//	private Set<GameGeneros> games;
+//	private Set<GameCatalogos> games;
 //	 @ManyToMany(fetch = FetchType.LAZY,
 //	            cascade = {
 //	                CascadeType.PERSIST,
@@ -64,11 +64,38 @@ public class Genero implements Serializable{
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return "Genero [id=" + id + ", name=" + name + "]";
+	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
 
-	
-
-
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Genero other = (Genero) obj;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
 
 
 	
